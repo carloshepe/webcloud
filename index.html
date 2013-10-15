@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>WebCloud</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/jquery-ui-1.10.3.custom.css">
+    <script src="javascript/jquery-2.0.1.js" ></script>
+    <script src="javascript/jquery-ui-1.10.3.custom.js" ></script>
+    <script src="javascript/main.js" ></script>
+
+
+</head>
+<body>
+
+<header class="appHeader" data-minus>
+<div id="logo"></div> 
+</header>
+
+<section id="navContainers" class="borderApp"> 
+    <div id="accordion">
+        <h3 id="layout">diseño</h3>
+            <section class="elementsContainer">
+                <div>
+                    <input type="text" class="columnLayout" value="12" onchange="validatecolumns(this);">
+                    <div class="draggHelperLayout"></div>
+                </div>
+
+                <div>
+                    <input type="text" class="columnLayout" value="6 6" onchange="validatecolumns(this);">
+                    <div class="draggHelperLayout"></div>
+                </div>
+
+                <div>
+                   <input type="text" class="columnLayout" value="4 4 4" onchange="validatecolumns(this);">
+                    <div class="draggHelperLayout"></div>
+                </div>
+            </section>
+        <h3>contenido</h3>
+            <section class="elementsContainer">
+                <div><div class="contentElement">Imagen</div> <div class="draggHelperImage"></div></div>
+                <div><div class="contentElement">Texto</div> <div class="draggHelper"></div></div>
+                <div><div class="contentElement">Titulo</div> <div class="draggHelper"></div></div>
+            </section>
+        <h3>facebook</h3>
+            <section class="elementsContainer">
+                <div>Imagen</div>
+                <div>Texto</div>
+                <div>Titulo</div>
+            </section>    
+    </div>        
+</section>  
+
+
+<section id="layoutContainer">
+    <div id="mainColumn" data-type="column" class="row mainColumn layoutDropable">
+        <header>Principal</header>
+        <section class="contentRow layoutSorteable">
+
+        </section>
+    </div>
+</section>
+
+
+</body>
+</html>

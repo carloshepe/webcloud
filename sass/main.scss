@@ -1,0 +1,176 @@
+$main-color: #11717B;
+@import "compass";
+@mixin headerLayout($radius) {
+    @include border-radius($radius);
+    text-align: left;
+    header{
+        @include inline-block;
+        @include border-top-left-radius($radius);
+        background-color: #FFF;
+        border: 1px solid #DDDDDD;
+        border-top: 0px;
+        border-left: 0px;
+        font-size: .8rem;
+        font-weight: normal;
+        margin: 0px;
+        margin-left: 0px;
+        margin-top: 0px;
+        padding: .2rem;
+        color: gray;
+    }
+
+}
+
+@mixin dragHelper(){
+    @include inline-block;
+    background-image: url('../img/plus.png');
+    background-position: center;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    cursor: move;
+    font-weight: bolder;
+    height: 30px;
+    text-align: center;
+    width:  30px;
+}
+
+
+@include font-face("myriadpro", font-files("../fonts/MyriadProRegular.ttf"));
+
+body{
+    background-color:#F9FEFE;
+    font-family: myriadpro;
+    font-size: 12px;
+    margin:0px;
+    padding:0px;
+    .appHeader{
+        background-color:$main-color;
+        height:50px;
+        position: fixed;
+        top: 0px;
+        width:100%;
+        z-index: 1;
+    }
+}
+
+
+
+.borderApp{
+    border: 1px solid #DDDDDD;
+}
+
+.hidden{
+            display: none;
+}
+
+#logo{
+    background-image: url('../img/logo.png'); 
+    left:40px;
+    height:39px;
+    position:relative;
+    top:5px;
+    width:122px;
+}
+
+#navContainers{
+    @include box-sizing(border-box);
+    background-color:#F2EFC3;
+    float:left;
+    position: fixed;
+    top: 50px;
+    width: 200px;
+    z-index: 1;
+    .columnLayout{
+        @include border-radius(10px);
+        @include inline-block;
+        border: none;
+        color: gray;
+        font-size: .7rem;
+        margin: 5px;
+        text-align: center;
+        text-decoration: none;
+        width: 12em;
+        &:focus{
+            background-color:#CCD869;
+            outline:none;
+        }
+    }
+
+    .draggHelperLayout{
+        @include dragHelper;
+    }
+
+    .draggHelperImage{
+        @include dragHelper;
+    }
+    
+    .elementsContainer{
+        padding: 5px;
+    }
+    
+    .contentElement{
+        @include inline-block;
+        min-width: 150px;
+
+    }
+    
+}
+
+#layoutContainer{
+    @include box-sizing(border-box);
+    padding-left: 230px;
+    padding-right: 30px;
+    position: relative;
+    top: 80px;
+    .mainColumn{
+        border: 1px solid #DDDDDD;
+        min-height: 300px;
+        min-width: 640px;
+        .layoutSorteable{
+            min-height: 50px;
+        }
+    }
+    
+}
+
+
+.column{
+    @include headerLayout(5px);
+    @include box-sizing(border-box);
+    background-color: white;
+    border: 1px solid #DDDDDD;
+    cursor: default;
+    float: left;
+
+}
+
+
+
+.contentRow{
+    overflow: auto;
+    padding: 30px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    text-align: left;
+    min-height: 25px;
+}  
+
+
+
+.row{
+    @include headerLayout(10px);
+    @include box-sizing(border-box);
+    min-height: 70px;
+    margin-top: 20px;
+}
+
+.rowStyle{
+    @include box-shadow(rgba(#000, 0.4) 0 0 10px 1px, rgba(#ADBF9F, .4) 0 0 14px 5px inset);
+    background-color: #F2F2F2;
+    cursor: move;
+}
+
+.ui-state-highlight{
+    margin-top: 20px;
+    min-height: 100px;
+}
